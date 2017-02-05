@@ -1,0 +1,21 @@
+<routes>
+	 <vType id="vtype0" accel="13" decel="9.81" sigma="0.5" length="4.5" minGap="2.5" maxSpeed="40">
+	 <param key="has.rerouting.device" value="false"/>
+	 </vType>
+	 <vType id="vtype1" guiShape="bus" accel="3" decel="14.81" sigma="0.5" length="12.0" minGap="2.5" maxSpeed="5"/>
+	 <vType id="vtype2" accel="18" decel="14.81" sigma="0.5" length="3.0" minGap="2.5" maxSpeed="40"/>
+	 <route id="route0" multi_ref="x" edges="25 28 31 34 37 40 43 46 49 52 55 "></route>
+	 <route id="route1" multi_ref="x" edges="25 2 27 64 31 7 35 69 37 40 43 46 49 52 55 "></route>
+	 <route id="route2" multi_ref="x" edges="25 2 27 30 33 68 9 38 71 40 43 46 49 52 55 "></route>
+	 <route id="route3" multi_ref="x" edges="25 2 27 30 33 68 9 38 71 40 43 46 49 52 55 "></route>
+	 
+	 <!--<flow id="flow0" type="vtype0" route="route0" begin="0" period="5" number="10" departSpeed="max"/>-->
+	 
+	 <flow id="flow0" type="vtype1" from="28" to="55" route="route0" begin="0" period="2" number="1" departSpeed="max"/>
+	 <flow id="flow1" type="vtype0" from="25" to="55" begin="10" period="40" number="0" departSpeed="max"/>
+	 <flow id="flow2" type="vtype0" from="25" to="55" begin="30" period="40" number="0" departSpeed="max"/>
+	 <flow id="flow3" type="vtype0" route="route1" begin="65" period="15" number="0" departSpeed="max"/>
+	 <!--<flow id="flow0" type="vtype0" route="route0" begin="10" period="3" number="0" departSpeed="max"/>-->
+	 
+	 
+</routes>

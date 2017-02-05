@@ -1,0 +1,24 @@
+<shapes>
+  <!--<poly id="poly0" type="type0" color="1,0,0" fill="true" layer="-1" shape="105,45 195,45 195,1 105,1"/>-->
+  <poly id="112552150" type="building" color="4.00,0.00,0.00" fill="true" layer="4" shape="105,45 195,45 195,10 105,10"/>
+  <poly id="112552151" type="building" color="4.00,4.00,0.00" fill="true" layer="4" shape="205,45 295,45 295,10 205,10"/>
+  <poly id="112552152" type="building" color="4.00,0.00,0.00" fill="true" layer="4" shape="305,45 395,45 395,10 305,10"/>
+  <poly id="112552153" type="building" color="0.00,4.00,4.00" fill="true" layer="4" shape="405,45 495,45 495,10 405,10"/>
+  <poly id="112552154" type="building" color="4.00,0.00,1.00" fill="true" layer="4" shape="505,45 595,45 595,10 505,10"/>
+  <poly id="112552155" type="building" color="0.00,2.00,0.00" fill="true" layer="4" shape="605,45 695,45 695,10 605,10"/>
+  <poly id="112552156" type="building" color="4.00,2.00,0.00" fill="true" layer="4" shape="705,45 795,45 795,10 705,10"/>
+  <poly id="112552157" type="building" color="0.00,4.00,6.00" fill="true" layer="4" shape="805,45 895,45 895,10 805,10"/>
+  <poly id="112552158" type="building" color="4.00,0.00,6.00" fill="true" layer="4" shape="905,45 995,45 995,10 905,10"/>
+  <poly id="112552161" type="building" color="4.00,0.00,0.00" fill="true" layer="4" shape="5,45 95,45 95,10 5,10"/>
+  <poly id="112552163" type="building" color="4.00,0.00,0.00" fill="true" layer="4" shape="5,55 95,55 95,90 5,90"/>
+  <poly id="112552164" type="building" color="4.00,0.00,0.00" fill="true" layer="4" shape="105,55 195,55 195,90 105,90"/>
+  <poly id="112552165" type="building" color="4.00,0.00,0.00" fill="true" layer="4" shape="205,55 295,55 295,90 205,90"/>
+  <poly id="112552166" type="building" color="4.00,0.00,0.00" fill="true" layer="4" shape="305,55 395,55 395,90 305,90"/>
+  <poly id="112552167" type="building" color="4.00,0.00,0.00" fill="true" layer="4" shape="405,55 495,55 495,90 405,90"/>
+  <poly id="112552168" type="building" color="4.00,0.00,0.00" fill="true" layer="4" shape="505,55 595,55 595,90 505,90"/>
+  <poly id="112552169" type="building" color="4.00,0.00,0.00" fill="true" layer="4" shape="605,55 695,55 695,90 605,90"/>
+  <poly id="112552170" type="building" color="4.00,0.00,0.00" fill="true" layer="4" shape="705,55 795,55 795,90 705,90"/>
+  <poly id="112552171" type="building" color="4.00,0.00,0.00" fill="true" layer="4" shape="805,55 895,55 895,90 805,90"/>
+  <poly id="112552172" type="building" color="4.00,0.00,0.00" fill="true" layer="4" shape="905,55 995,55 995,90 905,90"/>
+  
+</shapes>
