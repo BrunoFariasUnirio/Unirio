@@ -64,6 +64,8 @@ private:
 		InatisBuffer inatisBuffer;
 		std::string lastPos="noPos";
 		int lastSentTimedMessage = 0;
+		long int messagesSent = 0;
+		        long int messagesReceived = 0;
 
 
 	protected:

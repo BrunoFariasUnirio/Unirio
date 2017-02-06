@@ -71,6 +71,10 @@ void InatisTestApp::initialize(int stage) {
 }
 
 void InatisTestApp::finish() {
+    std::cout << "<"<<  (int)(simTime().dbl())<<"> Vehicle <" << findHost()->getId()<< "> sent <" << messagesSent <<"> messages. "  << std::endl;
+        std::cout << "<"<<  (int)(simTime().dbl())<<"> Vehicle <" << findHost()->getId()<< "> received <" << messagesReceived <<"> messages. Finish Time <"<<  (int)(simTime().dbl())  <<">"<< std::endl;
+        std::cout << "<"<<  (int)(simTime().dbl())<<"> Vehicle <" << findHost()->getId()<< "> has info about <" << inatisBuffer.getSize() <<"> segments. Finish Time <"<<  (int)(simTime().dbl() ) << ">"<<std::endl;
+
 }
 
 void InatisTestApp::handleSelfMsg(cMessage *msg) {
@@ -81,17 +85,19 @@ void InatisTestApp::handleSelfMsg(cMessage *msg) {
 void InatisTestApp::handleLowerMsg(cMessage* msg) {
     findHost()->getDisplayString().updateWith("r=6,blue");
     WaveShortMessage *wsm = (WaveShortMessage *)msg;
-    std::cout << "Vehicle <" << findHost()->getId()<< "> received message"  << std::endl;
+    std::cout << "<"<<  (int)(simTime().dbl())<<"> Vehicle <" << findHost()->getId()<< "> received message at time <" <<  simTime().dbl()  << ">"<<std::endl;
+    messagesReceived++;
 
     InatisBuffer recvBuffer;
     recvBuffer.deserialize(wsm->getWsmData());
 
-    std::cout << "Vehicle <" << findHost()->getId()<< "> Deserialized " << std::endl;
+    //std::cout << "Vehicle <" << findHost()->getId()<< "> Deserialized " << std::endl;
     //recvBuffer.printMe();
 
     if (inatisBuffer.Merge(recvBuffer)){
         // retransmit if new data
       //  std::cout << "Vehicle <" << findHost()->getId()<< "> Will retransmit message "<<std::endl;
+        std::cout << "<"<<  (int)(simTime().dbl())<<"> Vehicle <" << findHost()->getId() << "> will send restransmit message at time <" << simTime().dbl() << ">"<< std::endl;
         sendInatisMessage(inatisBuffer.serialize());
     }
 
@@ -109,7 +115,7 @@ void InatisTestApp::handlePositionUpdate() {
 
     int executionTime =(int)(simTime().dbl() - startTime);
     if (((executionTime % inatisMsgInterval) == 0) && (executionTime > lastSentTimedMessage)){
-        std::cout << "Vehicle " << findHost()->getId() << " will send timed message at time " <<  simTime().dbl() << std::endl;
+        std::cout << "<"<<  (int)(simTime().dbl())<<"> Vehicle <" << findHost()->getId() << "> will send timed message at time <" << simTime().dbl() << ">"<< std::endl;
         sendInatisMessage(inatisBuffer.serialize());
         lastSentTimedMessage=executionTime;
     }
@@ -144,7 +150,9 @@ void InatisTestApp::handlePositionUpdate() {
             currentEntry.setTimestamp(floor(simTime().dbl()));
 
             inatisBuffer.forceEntry(currentEntry);
+            std::cout << "<"<<  (int)(simTime().dbl())<<"> Vehicle <" << findHost()->getId() << "> will send junction message at time <" << simTime().dbl() << ">"<< std::endl;
             sendInatisMessage(inatisBuffer.serialize());
+
 	    }else {
 	        //std::cout << "Vehicle " << findHost()->getId() << " already disseminated message at junction " << currentJunction << std::endl;
 	    }
@@ -185,6 +193,8 @@ void InatisTestApp::sendInatisMessage(std::string inatisMessage) {
 
     wsm->setWsmData(inatisMessage.c_str());
     sendWSM(wsm);
+
+    messagesSent++;
 
 }
 void InatisTestApp::sendWSM(WaveShortMessage* wsm) {
